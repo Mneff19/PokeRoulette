@@ -1,0 +1,33 @@
+.mainpage_container{
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+
+  /*pa is short for playerArea*/
+  grid-template-rows: [pa1_2-s] 1fr [content-s pa1_2-e] 5fr [content-e pa3_4-s] 1fr [pa3_4-e];
+  grid-template-columns: [pa1_3-s] 1fr [middle-s pa1_3-e] 5fr [middle-e pa2_4-s] 1fr [pa2_4-e];
+
+  &_1{
+    grid-row: pa1_2-s/pa1_2-e;
+    grid-column: pa1_3-s/pa1_3-e;
+    border: solid 2px crimson;
+  }
+
+  &_2{
+    grid-row: pa1_2-s/pa1_2-e;
+    grid-column: pa2-4-s/pa2_4-e;
+    border: solid 2px crimson;
+  }
+
+  &_3{
+    grid-row: pa3_4-s/pa3_4-e;
+    grid-column: pa1_3-s/pa1_3-e;
+    border: solid 2px crimson;
+  }
+
+  &_4{
+    grid-row: pa3_4-s/pa3_4-e;
+    grid-column: pa2_4-s/pa2_4-e;
+    border: solid 2px crimson;
+  }
+}
