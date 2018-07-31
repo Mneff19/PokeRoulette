@@ -1,0 +1,30 @@
+
+@mixin center(){
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img{
+  @include center;
+}
+
+button{
+  @include center;
+  border: none;
+  background-color: transparent;
+  transition: all 1300ms ease;
+
+  &:hover{
+    border: none;
+    background-color: slategrey;
+    outline: none;
+    box-shadow: 10px 10px 200px 200px slategrey;
+    border-radius: 3px;
+  }
+
+  &:focus{
+    outline:none;
+  }
+}
