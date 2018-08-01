@@ -22,7 +22,7 @@ function main() {
     <Provider store={createStoreWithMiddleware(reducers)}>
       <Router history={history}>
         <Switch>
-        <Route path='/' exact component={HomePage}/>
+          <Route path='/' exact component={HomePage}/>
           <Route path='/roulette' component={MainPage}/>
           <App />
         </Switch>

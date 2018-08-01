@@ -1,6 +1,10 @@
 @import 'mainpage';
 @import 'homepage';
 
+html{
+  overflow: hidden;
+}
+
 *::before,
 *::after{
   margin: 0px;

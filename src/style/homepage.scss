@@ -1,30 +1,120 @@
 
 @mixin center(){
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-img{
-  @include center;
+.homepage_container_centerImageHolder{
+  width: 99vw;
+  height: 98vh;
+
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  &_image{
+    align-self: center;
+    justify-self: center;
+    grid-column: 1;
+    grid-row: 1;
+    transition: all 500ms ease;
+    width:20vw;
+  }
 }
 
-button{
+.homepage_container_buttonHolder{
+
   @include center;
-  border: none;
-  background-color: transparent;
-  transition: all 1300ms ease;
 
-  &:hover{
+
+  width: 250px;
+  height: 200px;
+
+  button{
+    @include center;
+    z-index: 0;
     border: none;
-    background-color: slategrey;
-    outline: none;
-    box-shadow: 10px 10px 200px 200px slategrey;
-    border-radius: 3px;
-  }
+    background: radial-gradient(rgba(255,0,0,0) ,slategrey 70%);
+    width: 250px;
+    height: 250px;
+      transition: all 150ms ease-in;
+      transition: all 550ms ease-out;
+      border-radius: 50%;
 
-  &:focus{
-    outline:none;
+
+          &:hover{
+            border: none;
+            // background: radial-gradient(rgba(255,0,0,0) ,slategrey 70%);
+            outline: none;
+            border-radius: 50%;
+            box-shadow: 10px 10px 175px 175px slategrey;
+
+            width: 300px;
+            height: 300px;
+          }
+    &:focus{
+      outline:none;
+    }
   }
+}
+
+.slow{
+  -webkit-animation: rotation 35s infinite linear;
+}
+
+.fast {
+		-webkit-animation: rotation 1s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+
+#img1{
+  z-index: -1;
+  -webkit-animation: rotation 30s infinite linear;
+}
+#img2{
+  z-index: -2;
+  -webkit-animation: rotation 40s infinite linear;
+}
+#img3{
+  z-index: -3;
+  -webkit-animation: rotation 100s infinite linear;
+}
+#img4{
+  z-index: -4;
+  -webkit-animation: rotation 70s infinite linear;
+}
+#img5{
+  z-index: -5;
+  -webkit-animation: rotation 60s infinite linear;
+}
+#img6{
+  z-index: -6;
+  -webkit-animation: rotation 50s infinite linear;
+}
+#img7{
+  z-index: -7;
+  -webkit-animation: rotation 80s infinite linear;
+}
+#img8{
+  z-index: -8;
+  -webkit-animation: rotation 10s infinite linear;
+}
+#img9{
+  z-index: -9;
+  -webkit-animation: rotation 20s infinite linear;
+}
+#img10{
+  z-index: -10;
+  -webkit-animation: rotation 110s infinite linear;
 }
