@@ -65,7 +65,7 @@
 }
 
 .fast {
-		-webkit-animation: rotation 1s infinite linear;
+		-webkit-animation: rotation 10s infinite linear;
 }
 
 @-webkit-keyframes rotation {
@@ -77,14 +77,23 @@
 		}
 }
 
+@-webkit-keyframes rotationBackwards {
+		from {
+				-webkit-transform: rotate(360deg);
+		}
+		to {
+				-webkit-transform: rotate(1deg);
+		}
+}
+
 
 #img1{
   z-index: -1;
-  -webkit-animation: rotation 30s infinite linear;
+  -webkit-animation: rotationBackwards 10s infinite linear;
 }
 #img2{
   z-index: -2;
-  -webkit-animation: rotation 40s infinite linear;
+  -webkit-animation: rotationBackwards 20s infinite linear;
 }
 #img3{
   z-index: -3;
