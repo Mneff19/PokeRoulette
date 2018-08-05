@@ -1,92 +1,94 @@
-@mixin center(){
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationBackwards {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.homepage_container {
+  display: flex;
+}
+
+.BG {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  background: radial-gradient(#4A4D52, black);
 }
-
-@-webkit-keyframes rotation {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(359deg);
-  }
-}
-
-@-webkit-keyframes rotationBackwards {
-  from {
-    -webkit-transform: rotate(360deg);
-  }
-  to {
-    -webkit-transform: rotate(1deg);
-  }
-}
-
-.homepage_container_centerImageHolder{
-  width: 99vw;
-  height: 98vh;
-  position: relative;
-
-  display: grid;
-}
-
-.homepage_container_buttonHolder{
-
-  @include center;
-
-
-  width: 250px;
-  height: 200px;
-
-  button{
-    @include center;
-    z-index: 0;
-    border: none;
-    background: radial-gradient(rgba(255,0,0,0) ,slategrey 70%);
-    width: 250px;
-    height: 250px;
-      transition: all 150ms ease-in;
-      transition: all 550ms ease-out;
-      border-radius: 50%;
-
-    &:focus{
-      outline:none;
-    }
-  }
-}
-
 
 .roulette-wheel {
+
+  position: absolute;
+  display: grid;
+
+  &_inner-wheel {
     align-self: center;
     justify-self: center;
     position: absolute;
+    opacity: 0;
     transition: all 500ms ease;
-}
+  }
 
-.roulette-wheel:nth-child(1) {
-  -webkit-animation: rotation 25s infinite linear;
-  width: 20vw;
-  z-index: -1;
+  &_inner-wheel:nth-child(1) {
+    animation: fadeIn 2s forwards ease-in-out, rotation 15s infinite linear;
+    width: 20vw;
+    z-index: -1;
+  }
+
+  &_inner-wheel:nth-child(2) {
+    animation: fadeIn 2s forwards ease-in-out, rotation 10s infinite linear;
+    width: 30vw;
+    z-index: -2;
+    animation-delay: 1s;
+  }
+
+  &_inner-wheel:nth-child(3) {
+    animation: fadeIn 2s forwards ease-in-out, rotationBackwards 20s infinite linear;
+    width: 45vw;
+    z-index: -3;
+    animation-delay: 2s;
+  }
+
+  &_inner-wheel:nth-child(4) {
+    animation: fadeIn 2s forwards ease-in-out, rotation 40s infinite linear;
+    width: 65vw;
+    z-index: -4;
+    animation-delay: 3s;
+  }
 }
 
 .roulette-wheel:nth-child(2) {
-  -webkit-animation: rotation 10s infinite linear;
-  width: 30vw;
-  z-index: -2;
+  width: 100%;
+  height: 100%;
+  transform: translate(50%);
 }
 
-.roulette-wheel:nth-child(3) {
-  -webkit-animation: rotationBackwards 20s infinite linear;
-  width: 45vw;
-  z-index: -3;
+.homepage_container_buttonHolder {
+  width: 250px;
+  height: 200px;
+  button {
+    z-index: 0;
+    border: none;
+    background: radial-gradient(rgba(255, 0, 0, 0), slategrey 70%);
+    width: 250px;
+    height: 250px;
+    transition: all 150ms ease-in;
+    transition: all 550ms ease-out;
+    border-radius: 50%;
+    &:focus {
+      outline: none;
+    }
+  }
 }
-
-.roulette-wheel:nth-child(4) {
-  -webkit-animation: rotation 40s infinite linear;
-  width: 65vw;
-  z-index: -4;
-}
-
-
-
