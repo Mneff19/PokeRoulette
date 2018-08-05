@@ -5,12 +5,11 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Router, Route, Switch } from 'react-router-dom';
 import ReduxThunk from 'redux-thunk';
 
-import App from './components/app'
+
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
-// import 'bootstrap/dist/css/bootstrap.css';
 import './style/main.scss';
 
 import history from './history';
@@ -24,7 +23,6 @@ function main() {
         <Switch>
           <Route path='/' exact component={HomePage}/>
           <Route path='/roulette' component={MainPage}/>
-          <App />
         </Switch>
       </Router>
     </Provider>

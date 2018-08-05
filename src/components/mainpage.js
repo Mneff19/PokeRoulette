@@ -18,7 +18,9 @@ class MainPage extends Component {
               playerID = '1'
               imageUrl = 'https://placecage.com/gif/200/200'
               />
-              <img className='cardImage' src={"https://placecage.com/gif/700/800"}/>
+              < img className = 'cardImage'
+              src = {require("../assets/SpriteResources/1.png")}
+              />
             </div>
             <div className='playerArea_nameHolder' id='player1Name'>
               <div className='playerArea_nameHolder_name'>Test</div>
