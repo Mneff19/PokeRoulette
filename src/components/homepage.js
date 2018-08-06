@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
 
 import RouletteWheel from './Homepage/wheelHolder';
+import HomeButton from './Homepage/homeButton';
 
 
 class HomePage extends Component {
 
   render(){
     return(
-      <div className="homepage_container">
-        <div className='BG'></div>
+      <div className="homepage_container BG">
+
 
         <RouletteWheel/>
         <RouletteWheel/>
 
-        {/* <div className="homepage_container_buttonHolder">
-          <button id='homepageCenterButton'>Take me to the Game</button>
-        </div> */}
+        <HomeButton/>
 
       </div>
     )

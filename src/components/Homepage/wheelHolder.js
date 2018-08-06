@@ -6,8 +6,10 @@ class RouletteWheel extends Component {
         super();
 
         const wheels = [
-            'Flame', 'Electric',
-            'Water', 'Psychic'
+            'Fire', 'Electric',
+            'Water', 'Psychic',
+            'Grass', 'Dark',
+            'Ground', 'Steel'
         ];
 
         this.innerWheels = this.shuffleArray(wheels);
@@ -30,25 +32,25 @@ class RouletteWheel extends Component {
             <div className='roulette-wheel'>
                 <img 
                     className = "roulette-wheel_inner-wheel"
-                    src = {require(`../../assets/${this.innerWheels[0]}.png`)}
+                    src = {require(`../../assets/Wheels/${this.innerWheels[0]}.png`)}
                     alt = "Wheel 1" 
                 />
 
                 <img
                     className="roulette-wheel_inner-wheel"
-                    src={require(`../../assets/${this.innerWheels[1]}.png`)}
+                    src={require(`../../assets/Wheels/${this.innerWheels[1]}.png`)}
                     alt="Wheel 2"
                 />
 
                 <img
                     className="roulette-wheel_inner-wheel"
-                    src={require(`../../assets/${this.innerWheels[2]}.png`)}
+                    src={require(`../../assets/Wheels/${this.innerWheels[2]}.png`)}
                     alt="Wheel 3"
                 />
 
                 <img
                     className="roulette-wheel_inner-wheel"
-                    src={require(`../../assets/${this.innerWheels[3]}.png`)}
+                    src={require(`../../assets/Wheels/${this.innerWheels[3]}.png`)}
                     alt="Wheel 4"
                 />
             </div>
