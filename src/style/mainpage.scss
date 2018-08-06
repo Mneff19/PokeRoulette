@@ -1,7 +1,8 @@
 .mainpage_container{
+  z-index: -100;
   display: grid;
-  width: 99vw;
-  height: 98vh;
+  width: 100vw;
+  height: 100vh;
 
   /*pa is short for playerArea*/
   grid-template-rows: [pa1_2-s] 3fr [content-s pa1_2-e] minmax(200px,300px) [content-e pa3_4-s] 3fr [pa3_4-e];
@@ -10,25 +11,25 @@
   &_1{
     grid-row: pa1_2-s/pa1_2-e;
     grid-column: pa1_3-s/pa1_3-e;
-    border: solid 2px crimson;
+    //border: solid 2px crimson;
   }
 
   &_2{
     grid-row: pa1_2-s/pa1_2-e;
     grid-column: pa2_4-s/pa2_4-e;
-    border: solid 2px crimson;
+    //border: solid 2px crimson;
   }
 
   &_3{
     grid-row: pa3_4-s/pa3_4-e;
     grid-column: pa1_3-s/pa1_3-e;
-    border: solid 2px crimson;
+    //border: solid 2px crimson;
   }
 
   &_4{
     grid-row: pa3_4-s/pa3_4-e;
     grid-column: pa2_4-s/pa2_4-e;
-    border: solid 2px crimson;
+    //border: solid 2px crimson;
   }
 
   &_middle{
@@ -43,6 +44,8 @@
 .mainpage_container_1,.mainpage_container_2,
 .mainpage_container_3,.mainpage_container_4{
   display: flex;
+  background: url("https://placecage.com/1300/1200");
+  background-size: cover;
 }
 
 .lower{
@@ -78,13 +81,13 @@
     // min-width: 150px;
     // min-height:150px;
     // max-height: 15vh;
-    border: solid 2px blue;
+    //border: solid 2px blue;
     display: flex;
     flex-direction: column;
 
     .playerImageWrapper{
       display: grid;
-      border: solid 2px black;
+      //border: solid 2px black;
       width: 100%;
       height: 100%;
       max-height: 200px;
@@ -93,7 +96,7 @@
       .playerImage{
         width: 100%;
         height: 100%;
-        z-index: -100;
+        // z-index: -1;
           grid-row: 1;
           grid-column: 1;
       }
@@ -111,7 +114,7 @@
     }
 
     .cardImage{
-      border: solid 2px slategrey;
+      //border: solid 2px slategrey;
       width: 100%;
       height: 50%;
 
@@ -121,7 +124,7 @@
   &_nameHolder{
     width:100%;
     height: 100%;
-    border: solid 2px green;
+    //border: solid 2px green;
     display: flex;
     flex-direction: column;
 
@@ -129,7 +132,7 @@
       justify-self: flex-end;
       height: 50px;
       width: 100%;
-      border: solid 2px orange;
+      //border: solid 2px orange;
       line-height: 50px;
     }
 
@@ -138,7 +141,7 @@
       display:flex;
       width: 100%;
       height: 100%;
-      // border: solid 3px crimson;
+      // //border: solid 3px crimson;
 
       justify-content: space-around;
 
@@ -148,7 +151,7 @@
         // align-self: center;
         max-width: 125px;
         max-height: 145px;
-        border: solid 2px purple;
+        //border: solid 2px purple;
         margin: 2px;
         display: flex;
         flex-direction: column;
@@ -180,7 +183,7 @@
 
 
 .roulette{
-  border: solid 2px brown;
+  //border: solid 2px brown;
   max-width: 45%;
   min-width: 300px;
   height: 100%;
@@ -190,7 +193,7 @@
   align-items: center;
 
   &_image_holder{
-    border: solid 2px cornflowerblue;
+    //border: solid 2px cornflowerblue;
     width: 100%;
     height: 100%;
     display: flex;
@@ -205,7 +208,7 @@
   &_type_holder{
     display: flex;
     width: 100%;
-    border: solid 2px lightgreen;
+    //border: solid 2px lightgreen;
 
     button{
       width:48%;

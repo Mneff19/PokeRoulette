@@ -18,7 +18,7 @@ export class PlayerImage extends Component {
   render() {
     const {input, imageUrl} = this.props;
     return (
-      <div className={`playerImageWrapper`}>
+      <div className={`playerImageWrapper ${this.props.additionalClass}`}>
         <img
           id={`player-${this.id}-image`}
           className='playerImage'
