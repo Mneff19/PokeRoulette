@@ -1,0 +1,1 @@
+export const SAVE_IMAGE_TO_STATE = 'SAVE_IMAGE_TO_STATE';

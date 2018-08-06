@@ -8,8 +8,8 @@ class HomePage extends Component {
 
   render(){
     return(
-      <div className="homepage_container BG">
 
+      <div className="homepage_container BG">
 
         <RouletteWheel/>
         <RouletteWheel/>
