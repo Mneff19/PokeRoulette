@@ -3,7 +3,7 @@ import {
     FETCH_PLAYER_IMAGE
 } from './types';
 
-import axios from './axios';
+import axios from 'axios';
 import ROOT_URL from '../config';
 
 export function StorePlayerImage(formData, success) {

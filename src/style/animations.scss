@@ -1,0 +1,72 @@
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationBackwards {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSlow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: .25;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glowOut {
+  to {
+    box-shadow: none;
+  }
+}
+
+@keyframes rainbowText {
+  0% {
+    text-shadow:
+      1px -1px 0 red,
+      -1px 1px 0 orange;
+  }
+  40% {
+    text-shadow:
+      -1px -1px 0 yellow,
+      1px 1px 0 #00ff34;
+  }
+  60% {
+    text-shadow:
+      -1px 1px 0 #01ff97,
+      1px -1px 0 #00e8ff;
+  }
+  80% {
+    text-shadow:
+      1px 1px 0 blue,
+      -1px -1px 0 #b401ff;
+  }
+  100% {
+    text-shadow:
+      1px -1px 0 #ff01d3,
+      -1px 1px 0 #ff0140;
+  }
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(50%);
+  }
+}

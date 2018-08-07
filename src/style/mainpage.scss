@@ -6,7 +6,7 @@
 
   /*pa is short for playerArea*/
   grid-template-rows: [pa1_2-s] 3fr [content-s pa1_2-e] minmax(200px,300px) [content-e pa3_4-s] 3fr [pa3_4-e];
-  grid-template-columns: [pa1_3-s] 2fr [middle-s pa1_3-e] 1fr [middle-e pa2_4-s] 2fr [pa2_4-e];
+  grid-template-columns: [pa1_3-s] 2fr [middle-s pa1_3-e] minmax(200px,300px) [middle-e pa2_4-s] 2fr [pa2_4-e];
 
   &_1{
     grid-row: pa1_2-s/pa1_2-e;
@@ -44,8 +44,23 @@
 .mainpage_container_1,.mainpage_container_2,
 .mainpage_container_3,.mainpage_container_4{
   display: flex;
-  background: url("https://placecage.com/1300/1200");
-  background-size: cover;
+}
+
+.mainpage_container_1{
+    background: url("../assets/Web-BorderP1.png");
+    background-size: 100% 100%;
+}
+.mainpage_container_2{
+    background: url("../assets/Web-BorderP2.png");
+    background-size: 100% 100%;
+}
+.mainpage_container_3{
+    background: url("../assets/Web-BorderP3.png");
+    background-size: 100% 100%;
+}
+.mainpage_container_4{
+    background: url("../assets/Web-BorderP4.png");
+    background-size: 100% 100%;
 }
 
 .lower{
@@ -71,12 +86,11 @@
 .playerArea{
   display: flex;
   width: 100%;
-  min-width: 300px;
 
   &_imageHolder{
     min-width: 150px;
-    max-width: 200px;
-    height: 100%;
+    max-width: 220px;
+    height: 95%;
     max-height: 500px;
     // min-width: 150px;
     // min-height:150px;
@@ -84,18 +98,23 @@
     //border: solid 2px blue;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 
     .playerImageWrapper{
       display: grid;
       //border: solid 2px black;
-      width: 100%;
-      height: 100%;
+      // margin-top: 10px;
+      width: 90%;
+      height: 40%;
       max-height: 200px;
       margin-bottom: 10px;
 
       .playerImage{
-        width: 100%;
-        height: 100%;
+        justify-self: center;
+        align-self: center;
+        width: 80%;
+        height: 80%;
         // z-index: -1;
           grid-row: 1;
           grid-column: 1;
@@ -115,9 +134,16 @@
 
     .cardImage{
       //border: solid 2px slategrey;
-      width: 100%;
-      height: 50%;
+      width: 90%;
+      height: 40%;
+      display: flex;
+      justify-content: center;
 
+      &_image{
+        width: 80%;
+        height: 80%;
+        align-self: center;
+      }
     }
   }
 
@@ -129,41 +155,53 @@
     flex-direction: column;
 
     &_name{
+      // text-align: center;
       justify-self: flex-end;
-      height: 50px;
+      height: 100px;
       width: 100%;
       //border: solid 2px orange;
-      line-height: 50px;
+      line-height: 80px;
+      font-size: 35px;
+      color: slategrey;
+      text-shadow: 0 0 10px black;
     }
 
     .chipArea{
       // align-self: flex-end;
       display:flex;
-      width: 100%;
+      width: 95%;
       height: 100%;
-      // //border: solid 3px crimson;
-
+      //border: solid 3px crimson;
+      // align-self: flex-end;
       justify-content: space-around;
 
       .chip{
-        min-width:100px;
-        min-height: 100px;
+        align-self: center;
+        min-width:150px;
+        min-height: 150px;
         // align-self: center;
-        max-width: 125px;
-        max-height: 145px;
+        max-width: 175px;
+        max-height: 175px;
         //border: solid 2px purple;
-        margin: 2px;
         display: flex;
         flex-direction: column;
+        background-image: url("../assets/Red-Chip.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        justify-content: center;
 
         img{
-          width:100%;
-          height: 85%;
+          width:44%;
+          height: 44%;
+          align-self: center;
+          justify-self: center;
+
         }
 
         button{
-          width:100%;
-          height:15%;
+          width:90%;
+          height:10%;align-self: center;
+          justify-self: flex-end;
         }
       }
     }
@@ -180,7 +218,19 @@
 }
 
 
+@keyframes test {
 
+  25% {
+    clip-path: polygon(20% 0%, 100% 38%, 70% 90%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0 46%, 100% 15%, 55% 74%, 0 100%);
+  }
+  75% {
+    clip-path: polygon(100% 38%, 100% 38%, 66% 100%, 0 53%);
+  }
+
+}
 
 .roulette{
   //border: solid 2px brown;
@@ -202,6 +252,8 @@
 
     img{
       width: 100%;
+      clip-path: polygon(20% 0%, 100% 38%, 70% 90%, 0% 100%);
+      animation: test 100ms alternate  infinite ;
     }
   }
 
@@ -221,3 +273,18 @@
     }
   }
 }
+
+// svg {
+//   .gradient-layer1 {
+//     fill: url(#gr-overlay1);
+//   }
+//   .gradient-layer2 {
+//     fill: url(#gr-overlay2);
+//   }
+//   .gradient-layer3 {
+//     fill: url(#gr-overlay3);
+//   }
+//   .gradient-layer4 {
+//     fill: url(#gr-overlay4);
+//   }
+// }

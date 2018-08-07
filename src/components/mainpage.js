@@ -7,57 +7,61 @@ class MainPage extends Component {
   render(){
 
     return(
-      <div className='mainpage_container'>
+      <div className='mainpage_container BG'>
 
         {/*All of the player info boxes, including the chips*/}
 
         <PlayerArea
-          playerImgSource={"https://placecage.com/1300/1200"}
-          cardImgSource={"https://placecage.com/1300/1200"}
-          chip1ImgSource={"https://placecage.com/1300/1200"}
-          chip2ImgSource={"https://placecage.com/1300/1200"}
-          chip3ImgSource={"https://placecage.com/1300/1200"}
+          playerImgSource={require("../assets/SpriteResources/waa.jpeg")}
+          cardImgSource={require("../assets/SpriteResources/420.jpeg")}
+          chip1ImgSource={require("../assets/SpriteResources/104.png")}
+          chip2ImgSource={require("../assets/SpriteResources/59.png")}
+          chip3ImgSource={require("../assets/SpriteResources/51.png")}
           imageHolderAlign={''}
           nameHolderAlign={''}
-          chipAlign={''}
+          chipAlign={'bottom'}
           playerImgAlign={``}
           playerNumber={1}
+          playerName={"Player 1"}
         />
         <PlayerArea
-          playerImgSource={"https://placecage.com/1300/1200"}
-          cardImgSource={"https://placecage.com/1300/1200"}
-          chip1ImgSource={"https://placecage.com/1300/1200"}
-          chip2ImgSource={"https://placecage.com/1300/1200"}
-          chip3ImgSource={"https://placecage.com/1300/1200"}
+          playerImgSource={require("../assets/SpriteResources/waa.jpeg")}
+          cardImgSource={require("../assets/SpriteResources/420.jpeg")}
+          chip1ImgSource={require("../assets/SpriteResources/90.png")}
+          chip2ImgSource={require("../assets/SpriteResources/72.png")}
+          chip3ImgSource={require("../assets/SpriteResources/9.png")}
           imageHolderAlign={'right'}
           nameHolderAlign={''}
-          chipAlign={''}
+          chipAlign={'top'}
           playerImgAlign={``}
           playerNumber={2}
+          playerName={"Player 2"}
         />
         <PlayerArea
-          playerImgSource={"https://placecage.com/1300/1200"}
-          cardImgSource={"https://placecage.com/1300/1200"}
-          chip1ImgSource={"https://placecage.com/1300/1200"}
-          chip2ImgSource={"https://placecage.com/1300/1200"}
-          chip3ImgSource={"https://placecage.com/1300/1200"}
-          imageHolderAlign={'lower'}
+          playerImgSource={require("../assets/SpriteResources/waa.jpeg")}
+          cardImgSource={require("../assets/SpriteResources/420.jpeg")}
+          chip1ImgSource={require("../assets/SpriteResources/95.png")}
+          chip2ImgSource={require("../assets/SpriteResources/57.png")}
+          chip3ImgSource={require("../assets/SpriteResources/123.png")}
+          imageHolderAlign={'bottom lower'}
           nameHolderAlign={'right'}
           chipAlign={'bottom'}
           playerImgAlign={`right`}
           playerNumber={3}
+          playerName={"Player 3"}
         />
         <PlayerArea
-          playerImgSource={"https://placecage.com/1300/1200"}
-          cardImgSource={"https://placecage.com/1300/1200"}
-          chip1ImgSource={"https://placecage.com/1300/1200"}
-          chip2ImgSource={"https://placecage.com/1300/1200"}
-          chip3ImgSource={"https://placecage.com/1300/1200"}
-          imageHolderAlign={'right lower'}
+          playerImgSource={require("../assets/SpriteResources/waa.jpeg")}
+          cardImgSource={require("../assets/SpriteResources/420.jpeg")}
+          chip1ImgSource={require("../assets/SpriteResources/78.png")}
+          chip2ImgSource={require("../assets/SpriteResources/35.png")}
+          chip3ImgSource={require("../assets/SpriteResources/52.png")}
+          imageHolderAlign={'right lower bottom'}
           nameHolderAlign={'right'}
-          chipAlign={'bottom'}
+          chipAlign={'top'}
           playerImgAlign={`right`}
           playerNumber={4}
+          playerName={"Player 4"}
         />
 
       {/*Everything in the middle*/}
