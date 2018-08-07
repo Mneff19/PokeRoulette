@@ -4,6 +4,14 @@ import PlayerArea from './Mainpage/playerArea';
 
 class MainPage extends Component {
 
+  constructor(props){
+    super(props)
+
+    this.toggleActive = function(idName){
+      document.getElementById(idName).classList.toggle("active");
+    }.bind(this);
+  }
+
   render(){
 
     return(
@@ -23,6 +31,7 @@ class MainPage extends Component {
           playerImgAlign={``}
           playerNumber={1}
           playerName={"Player 1"}
+          onClick={this.toggleActive("p1Chip1")}
         />
         <PlayerArea
           playerImgSource={require("../assets/SpriteResources/waa.jpeg")}
@@ -36,6 +45,7 @@ class MainPage extends Component {
           playerImgAlign={``}
           playerNumber={2}
           playerName={"Player 2"}
+          onClick={this.toggleActive("p1Chip1")}
         />
         <PlayerArea
           playerImgSource={require("../assets/SpriteResources/waa.jpeg")}
@@ -49,6 +59,7 @@ class MainPage extends Component {
           playerImgAlign={`right`}
           playerNumber={3}
           playerName={"Player 3"}
+          onClick={this.toggleActive("p1Chip1")}
         />
         <PlayerArea
           playerImgSource={require("../assets/SpriteResources/waa.jpeg")}
@@ -62,6 +73,7 @@ class MainPage extends Component {
           playerImgAlign={`right`}
           playerNumber={4}
           playerName={"Player 4"}
+          onClick={this.toggleActive("p1Chip1")}
         />
 
       {/*Everything in the middle*/}

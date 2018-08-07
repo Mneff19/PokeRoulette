@@ -4,7 +4,7 @@ import {PlayerImage} from '../formFields.js';
 class PlayerArea extends Component{
 
   render(){
-    const{playerImgSource, cardImgSource, chip1ImgSource, chip2ImgSource, chip3ImgSource, playerNumber, imageHolderAlign, nameHolderAlign, chipAlign, playerImgAlign, playerName} = this.props;
+    const{playerImgSource, cardImgSource, chip1ImgSource, chip2ImgSource, chip3ImgSource, playerNumber, imageHolderAlign, nameHolderAlign, chipAlign, playerImgAlign, playerName, onClick} = this.props;
 
     {/*this.renderText = function(){
       if(playerNumber == 2 || playerNumber == 4){
@@ -76,13 +76,16 @@ class PlayerArea extends Component{
 
             <div className={`chipArea ${chipAlign}`}>
               <div className={`chip ${chipAlign}`}>
-                <img  id={`p${playerNumber}Chip1`} src={`${chip1ImgSource}`}/>
+                <img  id={`p${playerNumber}Chip1`} className="test" src={`${chip1ImgSource}`}/>
+                <a onClick = {onClick}></a>
               </div>
               <div className={`chip ${chipAlign}`}>
-                <img  id={`p${playerNumber}Chip2`} src={`${chip2ImgSource}`}/>
+                <img  id={`p${playerNumber}Chip2`} className="test" src={`${chip2ImgSource}`}/>
+                <a className="test" onClick = {onClick}></a>
               </div>
               <div className={`chip ${chipAlign}`}>
-                <img  id={`p${playerNumber}Chip3`} src={`${chip3ImgSource}`}/>
+                <img  id={`p${playerNumber}Chip3`} className="test" src={`${chip3ImgSource}`}/>
+                <a className="test" onClick = {onClick}></a>
               </div>
             </div>
           </div>
