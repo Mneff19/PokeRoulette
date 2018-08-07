@@ -30,7 +30,7 @@ module.exports = {
 
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json-loader'
       },
 
       {
@@ -52,6 +52,6 @@ module.exports = {
       name: ['app', 'vendor'],
       minChunks: Infinity
     })
-  ]
+  ],
 
 };

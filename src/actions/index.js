@@ -3,7 +3,14 @@ import {
   SelectPlayer
 } from './players';
 
+import {
+  StorePlayerImage,
+  // RetrievePlayerImage
+} from './playerImage';
+
 export {
   SwitchActive,
-  SelectPlayer
+  SelectPlayer,
+  StorePlayerImage,
+  // RetrievePlayerImage
 };
