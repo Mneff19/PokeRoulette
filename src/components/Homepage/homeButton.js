@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import history from '../../history';
 
 class HomeButton extends Component {
 
@@ -16,12 +17,12 @@ class HomeButton extends Component {
     render() {
         return(
             <div className='mainButton'>
-                <a className='button-link' onMouseEnter={() => this.hoverOn()} onMouseLeave={()=> this.hoverOff()}>
-                    <img 
+                <a onClick={()=>{history.push('/settings')}}className='button-link' onMouseEnter={() => this.hoverOn()} onMouseLeave={()=> this.hoverOff()}>
+                    <img
                         id='Test'
                         className = "button-image"
                         src = {require(`../../assets/Button.png`)}
-                        alt = "Wheel 1" 
+                        alt = "Wheel 1"
                     />
                     <div className='button-text'>
                         To The Game...

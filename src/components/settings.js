@@ -1,12 +1,26 @@
 import React, {Component} from 'react';
 
-import PlayerImage from './Settings/playerImage';
+import SetupForm from './setupForm';
 
-export default class Setup extends Component {
-
-  render() {
+class Setup extends Component{
+  render(){
     return(
-      <PlayerImage playerID='1'/>
+      <div className='setupContainer BG'>
+      <SetupForm
+        playerNumber={1}
+      />
+      <SetupForm
+        playerNumber={2}
+      />
+      <SetupForm
+        playerNumber={3}
+      />
+      <SetupForm
+        playerNumber={4}
+      />
+      </div>
     )
   }
 }
+
+export default Setup;
