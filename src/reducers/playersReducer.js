@@ -1,24 +1,49 @@
+import {
+  FETCH_PLAYER_DATA
+} from '../actions/types';
+
 const INITIAL_STATE = [
     {
       id: '1',
-      image: null,
-      active: false
+      name: 'Player 1',
+      imageUrl: null,
+      pokemon1: 1,
+      pokemon2: 1,
+      pokemon3: 1,
+      card: null,
+      color: 'orange'
     },
     {
       id: '2',
-      image: null,
-      active: false
+      name: 'Player 2',
+      imageUrl: null,
+      pokemon1: 1,
+      pokemon2: 1,
+      pokemon3: 1,
+      card: null,
+      color: 'orange'
     },
     {
       id: '3',
-      image: null,
-      active: false
+      name: 'Player 3',
+      imageUrl: null,
+      pokemon1: 1,
+      pokemon2: 1,
+      pokemon3: 1,
+      card: null,
+      color: 'orange'
     },
     {
       id: '4',
-      image: null,
-      active: false
-    }
+      name: 'Player 4',
+      imageUrl: null,
+      pokemon1: 1,
+      pokemon2: 1,
+      pokemon3: 1,
+      card: null,
+      color: 'orange'
+    },
+
 
 ]
 
@@ -26,23 +51,13 @@ export default function(state=INITIAL_STATE, action) {
 
   switch(action.type) {
 
-    case 'SELECT_BY_ID':
-      const PlayerID = action.payload;
-      var SelectedPlayer = {};
-      console.log(state);
-      state.map(player => {
-        if(PlayerID == player.id) {
-          SelectedPlayer = player;
-        }
-      })
-      return {
+    case FETCH_PLAYER_DATA:
+      const playerData = action.payload;
+      return{
         ...state,
-        SelectedPlayer
+        ...playerData
       }
-
-    case 'SwitchActive':
-      const {active} = action.payload;
-
+      // case 
 
     default: return state;
   }

@@ -12,6 +12,8 @@ html{
 *::before,
 *::after{
   margin: 0px;
+  user-select: none;
+  -moz-user-select: none;
 }
 
 .BG {

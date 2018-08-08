@@ -1,16 +1,7 @@
 import {
-  SwitchActive,
-  SelectPlayer
-} from './players';
-
-import {
-  StorePlayerImage,
-  // RetrievePlayerImage
-} from './playerImage';
+  fetchPlayerData,
+} from './playerData';
 
 export {
-  SwitchActive,
-  SelectPlayer,
-  StorePlayerImage,
-  // RetrievePlayerImage
+  fetchPlayerData
 };

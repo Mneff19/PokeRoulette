@@ -1,95 +1,52 @@
 import React, {Component} from 'react';
-import {PlayerImage} from '../formFields.js';
+import Chip from './playerChip';
 
 class PlayerArea extends Component{
 
   render(){
-    const{playerImgSource, cardImgSource, chip1ImgSource, chip2ImgSource, chip3ImgSource, playerNumber, imageHolderAlign, nameHolderAlign, chipAlign, playerImgAlign, playerName, onClick} = this.props;
-
-    {/*this.renderText = function(){
-      if(playerNumber == 2 || playerNumber == 4){
-        return(
-          <svg viewBox="0 0 500 80">
-              <linearGradient id={`gr-overlay${playerNumber}`} x1="0" y1="0" x2="100%" y2="100%">
-                <stop stopColor="hsla(10, 100%, 50%, 1)" offset="10%"/>
-                <stop stopColor="hsla(0, 100%, 50%, 1)" offset="20%"/>
-                <stop stopColor="hsla(0, 0%, 0%, 1)" offset="80%"/>
-              </linearGradient>
-              <text
-                    y="50%"
-                    x="70%"
-
-                    dy=".35em"
-                    className={`gradient-layer${playerNumber}`}>
-                {`${playerName}`}
-              </text>
-            </svg>
-        )
-    }
-    else if(playerNumber == 3 || playerNumber == 1){
-
-      return(
-        <svg viewBox="0 0 500 80">
-            <linearGradient id={`gr-overlay${playerNumber}`} x1="0" y1="0" x2="100%" y2="100%">
-              <stop stopColor="hsla(0, 0%, 0%, 1)" offset="10%"/>
-              <stop stopColor="hsla(0, 50%, 50%, 1)" offset="50%"/>
-              <stop stopColor="hsla(10, 100%, 50%, 1)" offset="90%"/>
-            </linearGradient>
-            <text
-                  y="50%"
-
-                  dy=".35em"
-                  className={`gradient-layer${playerNumber}`}>
-              {`${playerName}`}
-            </text>
-          </svg>
-      )
-    }
-    else{
-      return(
-        <div>Player 1</div>
-      )
-    }
-  }.bind(this);*/}
+    const{id, name, imageUrl, card, color, pokemon1, pokemon2, pokemon3} = this.props.player;
 
     return(
 
-      <div className={`mainpage_container_${playerNumber}`}>
-        <div className='playerArea'>
-          <div className={`playerArea_imageHolder ${imageHolderAlign}`}>
-            <PlayerImage
-            type='file'
-            playerID = {`${playerNumber}`}
-            imageUrl = {`${playerImgSource}`}
-            additionalClass={`${playerImgAlign}`}
-            />
-            <div className='cardImage'>
-            < img className = 'cardImage_image'
-            src = {`${cardImgSource}`}
-            />
-            </div>
-          </div>
-          <div className={`playerArea_nameHolder`} id={`player${playerNumber}Name`}>
-            <div className={`playerArea_nameHolder_name  ${nameHolderAlign}`}>
-              {`${playerName}`}
+      <div className={`player-container-${id}`}>
+          <div className={`player-imageHolder${id < 3 ? '' : '_bottom'}`}>
+            
+            <div className='player-image'>
+              {/* <img className='player-image_border' src={require('../../assets/player-border.png')}/> */}
+              <img className = 'player-image_image' src = {`https://fillmurray.com/50/50`} id={`player-image-${id}`}/>
             </div>
 
-            <div className={`chipArea ${chipAlign}`}>
-              <div className={`chip ${chipAlign}`}>
-                <img  id={`p${playerNumber}Chip1`} className="test" src={`${chip1ImgSource}`}/>
-                <a onClick = {onClick}></a>
-              </div>
-              <div className={`chip ${chipAlign}`}>
-                <img  id={`p${playerNumber}Chip2`} className="test" src={`${chip2ImgSource}`}/>
-                <a className="test" onClick = {onClick}></a>
-              </div>
-              <div className={`chip ${chipAlign}`}>
-                <img  id={`p${playerNumber}Chip3`} className="test" src={`${chip3ImgSource}`}/>
-                <a className="test" onClick = {onClick}></a>
-              </div>
+            <div className='card'>
+              <img className='card_border' src={require('../../assets/card-border.png')}/>
+              <img className = 'card_image' src = {`https://fillmurray.com/60/60`}/>
             </div>
           </div>
-        </div>
+
+          <div className={`playerName${id % 2 ? '' : '_reverse'} ${id < 3 ? 'playerName_top' : 'playerName_bottom'}`}>
+            {`${name}`}
+          </div>
+
+          <div className={`chipArea`}>
+            <Chip
+            playerID = {id}
+            numberID = {'1'}
+            color = {`${color}`}
+            pokemonID = {pokemon1}
+            />
+            <Chip
+            playerID = {id}
+            numberID = {'2'}
+            color = {`${color}`}
+            pokemonID = {pokemon2}
+            />
+            <Chip
+            playerID = {id}
+            numberID = {'3'}
+            color = {`${color}`}
+            pokemonID = {pokemon3}
+            />
+          </div>
+
       </div>
     )
   }

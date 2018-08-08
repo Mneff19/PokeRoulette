@@ -1,0 +1,47 @@
+@mixin centerImage {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+}
+
+.card {
+    grid-row: card-s/card-e;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    width: 70%;
+
+    display: flex;
+
+    &_border {
+        width: 100%;
+        @include centerImage();
+        z-index: 1;
+    }
+
+    &_image {
+        width: 100%;
+        @include centerImage();
+    }
+}
+
+.player-image {
+    grid-row: player-s/player-e;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    width: 70%;
+
+    display: flex;
+
+    &_border {
+        width: 100%;
+        @include centerImage();
+        z-index: 1;
+    }
+
+    &_image {
+        width: 100%;
+        @include centerImage();
+    }
+}
