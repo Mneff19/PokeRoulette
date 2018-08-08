@@ -1,6 +1,7 @@
 import {
     FETCH_PLAYER_DATA,
-    GET_RANDOM_POKEMON
+    GET_RANDOM_POKEMON,
+    FETCH_POKEMON_DATA
 } from './types';
 
 import axios from 'axios';
@@ -23,3 +24,34 @@ export function fetchPlayerData() {
     }
 }
 
+export function rollPokemon(playerID, slotID) {
+  var formData = new FormData();
+  formData.append('playerID', playerID);
+  formData.append('slotID', slotID);
+
+  return function(dispatch) {
+    console.log(playerID);
+    axios.post(`${ROOT_URL}/roll`, formData)
+
+      .then(response => {
+        console.log(response)
+        dispatch({
+          type: GET_RANDOM_POKEMON,
+          payload: response.data
+        })
+      })
+  }
+}
+
+export function fetchPokemonData() {
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/players/data/pokemon`)
+
+      .then(response => {
+        dispatch({
+          type: FETCH_POKEMON_DATA,
+          payload: response.data
+        })
+      })
+  }
+}

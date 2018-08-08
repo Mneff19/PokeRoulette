@@ -1,5 +1,6 @@
 import {
-  FETCH_PLAYER_DATA
+  FETCH_PLAYER_DATA,
+  FETCH_POKEMON_DATA
 } from '../actions/types';
 
 const INITIAL_STATE = [
@@ -57,7 +58,15 @@ export default function(state=INITIAL_STATE, action) {
         ...state,
         ...playerData
       }
-      // case 
+      case FETCH_POKEMON_DATA:
+        const pokemonData = action.payload;
+        console.log(...Object.entries(state));
+        // state.map((player, index) => {
+        //   Object.assign(player, pokemonData[index])
+        // })
+        return{
+          ...state
+        }
 
     default: return state;
   }

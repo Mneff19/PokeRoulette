@@ -1,7 +1,11 @@
 import {
   fetchPlayerData,
+  rollPokemon,
+  fetchPokemonData
 } from './playerData';
 
 export {
-  fetchPlayerData
+  fetchPlayerData,
+  rollPokemon,
+  fetchPokemonData
 };
