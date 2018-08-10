@@ -1,11 +1,13 @@
 import {
   fetchPlayerData,
   rollPokemon,
-  fetchPokemonData
+  fetchPokemonData,
+  wipePlayerData
 } from './playerData';
 
 export {
   fetchPlayerData,
   rollPokemon,
-  fetchPokemonData
+  fetchPokemonData,
+  wipePlayerData
 };

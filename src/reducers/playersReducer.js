@@ -60,10 +60,9 @@ export default function(state=INITIAL_STATE, action) {
       }
       case FETCH_POKEMON_DATA:
         const pokemonData = action.payload;
-        console.log(...Object.entries(state));
-        // state.map((player, index) => {
-        //   Object.assign(player, pokemonData[index])
-        // })
+        Object.entries(state).map((player, index) => {
+          Object.assign(player[1], pokemonData[index]);
+        })
         return{
           ...state
         }
