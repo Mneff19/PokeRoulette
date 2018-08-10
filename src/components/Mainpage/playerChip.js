@@ -8,19 +8,31 @@ class Chip extends Component {
         super(props);
 
         this.state = {
-            rolling: false
+            rolling: false,
+            currentImage: 1
         }
     }
 
     handleClick = function(playerID, numberID) {
         this.setState({rolling: true}, function () {
-            console.log(this.state.rolling);
+            this.shuffleImage();
         });
 
         this.props.rollPokemon(playerID, numberID);
 
-        setTimeout(()=>{this.setState({rolling: false})}, 3000);
+        setTimeout(()=>{this.setState({rolling: false}, () => {clearInterval(this.intervalID)})}, 4000);
 
+    }.bind(this)
+
+    getRandomID = function() {
+        const min = 1;
+        const max = 151;
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    shuffleImage = function() {
+        this.intervalID = setInterval(
+            () => {this.setState({currentImage: this.getRandomID()})}, 150)
     }.bind(this)
 
     render() {
@@ -36,7 +48,9 @@ class Chip extends Component {
                     <img
                         id={`player${playerID}-chip${numberID}`}
                         className="test"
-                        src = 'http://fillmurray.com/60/60'
+                        src = {
+                            require(`../../assets/SpriteResources/${this.state.currentImage}.png`)
+                        }
                     />
                 </div>
             )
